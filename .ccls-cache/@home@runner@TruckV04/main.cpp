@@ -109,7 +109,7 @@ int ;
 do
     {
 
-        printf( "\n   1. Solicitar un Camion"  );      
+        printf( "\n   1.  Ingresar datos del Camion"  );      
         printf( "\n   2. Solicitar un Camion"  );
         
         printf( "\n   3. Cargar  un Camion." );
