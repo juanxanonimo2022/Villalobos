@@ -19,7 +19,7 @@ double vrtransporte, vrcamionkilometro;
 double iva, vriva, vrtransporteeiva;
 string matricula, conductor, cmnestado, nombrecliente, nitocccliente,cmnsobrecarga,resp;
 
-bool estado,haysobrecarga;
+bool estado,haysobrecarga,generarfactura;
 
 /*
 int contador=0;
@@ -95,13 +95,21 @@ int main() {
   cmn4.vrkilometro = 4000;
   cmn4.estado = 0;
 
+   //*******************************************
+// Valores para tablas
+//******************************************  
+  const char separator    = ' ';
+  const int nameWidth     = 6;
+  const int numWidth     =8;
+  
   //*********************************************
   // Menu de seleccion
   //*********************************************
 
   int;
   do {
-
+haysobrecarga=0;    
+generarfactura=0;
     printf("\n   1. Ingresar datos del Camion");
     printf("\n   2. Solicitar un Camion");
 
@@ -228,7 +236,12 @@ cout << ("Camion seleccionado :") << numero1 << ",  Tiene una capacidad de carga
         cout << ("Autoriza generar factura y realizar transporte [S/n]");
         cin >> resp;
         if (resp == "n" or "N" or "no" or "No" or "NO") {
-          // if else de poner el camion seleccionado en estado 0
+          
+        generarfactura = 0;  
+          
+        // if else de poner el camion seleccionado en estado 0
+
+          
         }
         /*
         ifelse {
@@ -267,10 +280,19 @@ cout << ("Camion seleccionado :") << numero1 << ",  Tiene una capacidad de carga
         cout << ("\n Valor Iva : ") << vriva << (" COP ");
         vrtransporteeiva = vrtransporte + vriva;
         cout << ("\n Valor a pagar  : ") << vrtransporteeiva << (" COP ");
-        cout << "\n";
 
-        break;
-      /*Descargar camion */
+  cout << ("\n Generar Factura a archivo ");
+cin.get();
+//***********************************
+//imprimir Factura
+//*********************************** 
+cout<<("\n Numero de Factura : ")<< numfactura;
+  cout << "\n";    
+  cout << "\n";
+  cout << "\n";
+break;
+
+/*Descargar camion */
       case 5:
         printf("\n   Descargar camion");
 
