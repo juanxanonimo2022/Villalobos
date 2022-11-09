@@ -233,7 +233,7 @@ cout << ("Camion seleccionado :") << numero1 << ",  Tiene una capacidad de carga
         cout << "\n";
         cout << "\n";
         // a revisar
-        cout << ("Autoriza generar factura y realizar transporte [S/n]");
+        cout << ("Autoriza generar factura y realizar transporte [S/n] ");
         cin >> resp;
         if (resp == "n" or "N" or "no" or "No" or "NO") {
           
@@ -264,7 +264,7 @@ cout << ("Camion seleccionado :") << numero1 << ",  Tiene una capacidad de carga
 
       /*Generar Factura */
       case 4:
-        if(generarfactura = 0){
+        if(generarfactura == 0){
           cout << "\n";
           cout << ("No Se puede generar factura, no ha sido autorizada la facturacion.");
           cout << "\n";
