@@ -264,6 +264,16 @@ cout << ("Camion seleccionado :") << numero1 << ",  Tiene una capacidad de carga
 
       /*Generar Factura */
       case 4:
+        if(generarfactura = 0){
+          cout << "\n";
+          cout << ("No Se puede generar factura, no ha sido autorizada la facturacion.");
+          cout << "\n";
+          break;
+
+          
+        }
+
+        else {  
         printf("\n   Factura");
 
         numfactura = contadorfactura + 1;
@@ -283,6 +293,10 @@ cout << ("Camion seleccionado :") << numero1 << ",  Tiene una capacidad de carga
 
   cout << ("\n Generar Factura a archivo ");
 cin.get();
+  
+  cout << "\n";  
+  cout << "\n";  
+  cout << "\n";        
 //***********************************
 //imprimir Factura
 //*********************************** 
@@ -291,7 +305,7 @@ cout<<("\n Numero de Factura : ")<< numfactura;
   cout << "\n";
   cout << "\n";
 break;
-
+   }
 /*Descargar camion */
       case 5:
         printf("\n   Descargar camion");
