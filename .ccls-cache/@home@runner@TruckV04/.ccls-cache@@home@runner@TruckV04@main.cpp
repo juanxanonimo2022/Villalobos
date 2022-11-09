@@ -100,7 +100,7 @@ int main() {
   //int;
   do {
 
-    printf("\n   1.  Ingresar datos del Camion");
+    printf("\n   1. Ingresar datos del Camion");
     printf("\n   2. Solicitar un Camion");
 
     printf("\n   3. Cargar  un Camion.");
@@ -123,7 +123,7 @@ int main() {
     switch (opcion) {
     /* Ingreso de Datos de camion  */
     case 1:
-    printf("Ingresar datos del camion - Pendiente : ");
+    printf("Ingresar lo datos del camion - Pendiente : ");
       cout << "\n";
 /*
 cout << "\n";

@@ -10,15 +10,16 @@ using namespace std;
 // Inicializacion de variables
 
 int n, opcion, contador, numero, numero1, cargaatransportar;
+
 int numero3, numero4, numero5, capacidad;
 int rendimiento, cmnseleccionado, cargacmnselecc;
 int vrkilometro, numfactura, kilometros;
 
 double vrtransporte, vrcamionkilometro;
 double iva, vriva, vrtransporteeiva;
-string matricula, conductor, cmnestado, nombrecliente, nitocccliente, resp;
+string matricula, conductor, cmnestado, nombrecliente, nitocccliente,cmnsobrecarga,resp;
 
-bool estado;
+bool estado,haysobrecarga;
 
 /*
 int contador=0;
@@ -36,6 +37,7 @@ struct Camion {
   int vrkilometro;
   int rendimiento;
   bool estado;
+  bool sobrecarga;
 };
 int contadorfactura = 10000;
 
@@ -97,10 +99,10 @@ int main() {
   // Menu de seleccion
   //*********************************************
 
-  //int;
+  int;
   do {
 
-    printf("\n   1.  Ingresar datos del Camion");
+    printf("\n   1. Ingresar datos del Camion");
     printf("\n   2. Solicitar un Camion");
 
     printf("\n   3. Cargar  un Camion.");
@@ -123,20 +125,13 @@ int main() {
     switch (opcion) {
     /* Ingreso de Datos de camion  */
     case 1:
-    printf("Ingresar datos del camion - Pendiente : ");
-      cout << "\n";
-/*
-cout << "\n";
-cout << "Ingresar el Camion No : ";
-cin >> camionnumero1;
+      cout << "Ingresar datos del camion  : Pendiente ";
 
-
-*/
-break;   
       // Ingreso de solicitud de carga  Camion
-
-   
-      case 2:
+      cout << "\n";
+      break;
+      
+    case 2:
       cout << "\n";
       cout << "Ingresar el Numero de camion  : ";
       cin >> numero1;
@@ -146,14 +141,15 @@ break;
       // Ingreso de solicitud de carga  Camion No1
       if (numero1 == cmn1.numero && cmn1.estado == 0 &&
           cargaatransportar <= cmn1.capacidad) {
-        
         cout << "\n";
         cout << "Bien, el camion No " << cmn1.numero << " puede llevar la carga"
              << "\n";
         cout << "\n";
         cmn1.estado = 1;
+        
         vrcamionkilometro = cmn1.vrkilometro;
         cmnestado = "Seleccionado";
+        
       }
 
       else if (numero1 == cmn2.numero && cmn2.estado == 0 &&
@@ -197,6 +193,9 @@ break;
         cout << "Lo siento, el camion No " << numero1
              << " no puede llevar la carga"
              << "\n";
+cmn1.sobrecarga = 1;
+haysobrecarga = 1;
+cmnsobrecarga = "Sobrecarga";
       }
       contador = contador + 1;
       // system ("cls");
@@ -204,7 +203,14 @@ break;
 
     /* Ingreso de solicitud de carga */
     case 3:
-      if (contador > 0) {
+ if (haysobrecarga == 1)
+      {
+cout << ("Camion seleccionado :") << numero1 << ",  Tiene una capacidad de carga inferior a la seleccionada, elija un camion adecuado \n";
+          cout << "\n";
+          cout << "\n";
+          break;
+      }     
+ else if (contador > 0) {
         cout << "\n";
         cout << ("Camion seleccionado :") << numero1 << "\n";
         cout << ("Estado Camion seleccionado :") << cmnestado << "\n";
@@ -214,9 +220,8 @@ break;
         cout << ("Distancia en kilometros a transportar Carga : ");
         cin >> numero3;
         vrtransporte = numero3 * vrcamionkilometro;
-        cout << (" Valor de transporte : %c") << vrtransporte << (" COP.")
-             << "\n",
-            36;
+        cout << (" Valor de transporte : ") << vrtransporte << (" COP.")
+             << "\n";
         cout << "\n";
         cout << "\n";
         // a revisar
@@ -235,8 +240,7 @@ break;
 
         else {
           cout << "\n";
-          cout << ("No ha usado el programa y por tanto no ha seleccionado un "
-                   "camion, por favor seleccione uno.");
+          cout << ("No ha usado el programa y por tanto no ha seleccionado un camion, por favor seleccione uno.");
           cout << "\n";
           break;
         }
@@ -285,4 +289,5 @@ break;
 
   cout << ("este menu se ha usado : ") << contador;
 }
-void clrscr() { system("cls"); }
+void clrscr() { system("cls"); 
+  }
