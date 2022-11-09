@@ -123,7 +123,7 @@ int main() {
     printf("\n   7. Salir.");
 
     printf("\n\n   Introduzca opcion (1-7): ");
-haysobrecarga=0;    
+    
 generarfactura=0;
     
     scanf("%d", &opcion);
@@ -141,6 +141,7 @@ generarfactura=0;
       break;
       
     case 2:
+      haysobrecarga=0;
       cout << "\n";
       cout << "Ingresar el Numero de camion  : ";
       cin >> numero1;
