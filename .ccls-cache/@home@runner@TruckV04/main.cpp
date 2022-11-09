@@ -108,8 +108,7 @@ int main() {
 
   int;
   do {
-haysobrecarga=0;    
-generarfactura=0;
+
     printf("\n   1. Ingresar datos del Camion");
     printf("\n   2. Solicitar un Camion");
 
@@ -124,7 +123,9 @@ generarfactura=0;
     printf("\n   7. Salir.");
 
     printf("\n\n   Introduzca opcion (1-7): ");
-
+haysobrecarga=0;    
+generarfactura=0;
+    
     scanf("%d", &opcion);
     contador = contador + 1;
     cout << "\n";
