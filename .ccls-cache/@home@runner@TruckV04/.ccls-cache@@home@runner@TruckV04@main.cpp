@@ -97,7 +97,7 @@ int main() {
   // Menu de seleccion
   //*********************************************
 
-  int;
+  //int;
   do {
 
     printf("\n   1.  Ingresar datos del Camion");
@@ -123,11 +123,20 @@ int main() {
     switch (opcion) {
     /* Ingreso de Datos de camion  */
     case 1:
-      cout << "Ingresar datos del camion  : Pendiente";
+    printf("Ingresar datos del camion - Pendiente : ");
+      cout << "\n";
+/*
+cout << "\n";
+cout << "Ingresar el Camion No : ";
+cin >> camionnumero1;
 
+
+*/
+break;   
       // Ingreso de solicitud de carga  Camion
-      break;
-    case 2:
+
+   
+      case 2:
       cout << "\n";
       cout << "Ingresar el Numero de camion  : ";
       cin >> numero1;
@@ -137,6 +146,7 @@ int main() {
       // Ingreso de solicitud de carga  Camion No1
       if (numero1 == cmn1.numero && cmn1.estado == 0 &&
           cargaatransportar <= cmn1.capacidad) {
+        
         cout << "\n";
         cout << "Bien, el camion No " << cmn1.numero << " puede llevar la carga"
              << "\n";
